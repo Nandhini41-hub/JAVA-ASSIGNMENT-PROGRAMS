@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAI MATRICULATION HIGHER SECONDARY SCHOOL - Admissions</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.1.jpeg" alt="Jai High School Logo">
+        </div>
+        <h1>JAI MATRICULATION HIGHER SECONDARY SCHOOL</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="academics.html">Academics</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="content">
+        <h2>Admissions Information</h2>
+        <p>We welcome students from all backgrounds to apply to JAI MATRICULATION HIGHER SECONDARY SCHOOL. Our admissions process is designed to be inclusive and accessible.</p>
+        <p>For more details on how to apply, please contact our admissions office or visit the campus.</p>
+    </section>
+
+    <section class="content requirements">
+        <h2>Admission Requirements</h2>
+        <p>To apply for admission, please ensure you meet the following requirements:</p>
+        <ul>
+            <li>Completed application form</li>
+            <li>Copy of the most recent report card</li>
+            <li>Two letters of recommendation</li>
+            <li>Birth certificate or passport copy</li>
+        </ul>
+    </section>
+
+    
+    <section class="content campus-tours">
+        <h2>Schedule a Campus Tour</h2>
+        <p>We encourage prospective students and their families to visit our campus and experience the vibrant community at JAI MATRICULATION HIGHER SECONDARY SCHOOL. Campus tours are available by appointment.</p>
+        <img src="images/campus.jpeg" alt="Campus Tour" class="content-image">
+    </section>
+
+    
+    <section class="content admission-form">
+        <h2>Apply Now</h2>
+        <p>Please fill out the form below to start your application process:</p>
+        <form action="submit_admission.php" method="POST">
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label for="grade">Grade Applying For:</label><br>
+            <select id="grade" name="grade" required>
+                <option value="6">Grade 6</option>
+                <option value="7">Grade 7</option>
+                <option value="8">Grade 8</option>
+                <option value="9">Grade 9</option>
+                <option value="10">Grade 10</option>
+                <option value="11">Grade 11</option>
+                <option value="12">Grade 12</option>
+            </select><br><br>
+
+            <label for="message">Additional Information:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+            <input type="submit" value="Submit Application">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; DEVELOPED BY NANDHINI.G 3RD YEAR COMPUTER SCIENCE AND ENGINEERING</p>
+    </footer>
+</body>
+</html>
+
+

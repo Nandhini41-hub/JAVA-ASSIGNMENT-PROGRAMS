@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Year and Branch</title>
+    
+</head>
+<body>
+    <h1>Student Year and Branch Finder</h1>
+
+    <label for="rollInput">Enter Roll Number:</label>
+    <input type="text" id="rollInput" placeholder="Enter roll number" />
+    <button onclick="getStudentDetails()">Get Details</button>
+
+    <div id="result"></div>
+
+    <script>
+        
+        function getYearOfStudy(admissionYear) {
+            const currentYear = new Date().getFullYear();
+            const studyYear = currentYear - parseInt("20" + admissionYear) + 1;
+
+            switch (studyYear) {
+                case 1:
+                    return 'First Year';
+                case 2:
+                    return 'Second Year';
+                case 3:
+                    return 'Third Year';
+                case 4:
+                    return 'Final Year';
+                default:
+                    return 'Graduated or Invalid Year';
+            }
+        }
+
+       
+        function getBranch(branchCode) {
+            const branches = {
+                'CS': 'Computer Science and Engineering (CSE)',
+                'EC': 'Electronics and Communication Engineering (ECE)',
+                'ME': 'Mechanical Engineering (ME)',
+                'EE': 'Electrical Engineering (EE)',
+                
+            };
+
+            return branches[branchCode] || 'Unknown Branch';
+        }
+
+        
+        function getStudentDetails() {
+            const rollInput = document.getElementById('rollInput').value.toUpperCase();
+            const resultDiv = document.getElementById('result');
+            const rollPattern = /^[A-Z]{2}\d{2}[A-Z]{2}\d{2}$/;
+
+            if (rollPattern.test(rollInput)) {
+                const admissionYear = rollInput.slice(2, 4); 
+                const branchCode = rollInput.slice(4, 6); 
+
+                const yearOfStudy = getYearOfStudy(admissionYear);
+                const branch = getBranch(branchCode);
+                resultDiv.innerHTML = `The student belongs to ${yearOfStudy} (${branch}).`;
+                resultDiv.style.color = 'green';
+            } else {
+                resultDiv.innerHTML = 'Invalid Roll Number! Please enter a valid format (e.g., ES19CS01).';
+                resultDiv.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>

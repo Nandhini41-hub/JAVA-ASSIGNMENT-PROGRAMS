@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis</title>
+    <style>
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        #result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Analysis Tool</h1>
+
+    <textarea id="textInput" placeholder="Enter your text here..."></textarea>
+    
+    <div>
+        <label for="bgColorPicker">Select Background Color:</label>
+        <input type="color" id="bgColorPicker" />
+        
+        <label for="fgColorPicker">Select Text Color:</label>
+        <input type="color" id="fgColorPicker" />
+    </div>
+
+    <button onclick="analyzeText()">Analyze Text</button>
+
+    <div id="result"></div>
+
+    <script>
+        function analyzeText() {
+            const text = document.getElementById('textInput').value;
+            const resultDiv = document.getElementById('result');
+
+            let alphabetCount = 0;
+            let digitCount = 0;
+            let specialCharCount = 0;
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                if (/[a-zA-Z]/.test(char)) {
+                    alphabetCount++;
+                } else if (/[0-9]/.test(char)) {
+                    digitCount++;
+                } else if (/[^a-zA-Z0-9]/.test(char)) {
+                    specialCharCount++;
+                }
+            }
+            resultDiv.innerHTML = `
+                <p>Alphabets: ${alphabetCount}</p>
+                <p>Digits: ${digitCount}</p>
+                <p>Special Characters: ${specialCharCount}</p>
+            `;
+        }
+
+        document.getElementById('bgColorPicker').addEventListener('input', function() {
+            document.getElementById('textInput').style.backgroundColor = this.value;
+        });
+
+        document.getElementById('fgColorPicker').addEventListener('input', function() {
+            document.getElementById('textInput').style.color = this.value;
+        });
+    </script>
+</body>
+</html>

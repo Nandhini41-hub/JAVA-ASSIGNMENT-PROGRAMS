@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragraph Text Manipulation</title>
+</head>
+<body>
+
+    <h1>Change Paragraph Text Properties</h1>
+
+    
+    <p id="myParagraph">This is the sample paragraph text.</p>
+
+    
+    <label for="fontType">Choose Font Type:</label>
+    <select id="fontType" onchange="changeFontType()">
+        <option value="Arial">Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+    </select>
+
+    
+    <label for="fontSize">Choose Font Size:</label>
+    <select id="fontSize" onchange="changeFontSize()">
+        <option value="14px">14px</option>
+        <option value="16px">16px</option>
+        <option value="18px">18px</option>
+        <option value="20px">20px</option>
+        <option value="24px">24px</option>
+    </select>
+
+   
+    <label for="textColor">Choose Text Color:</label>
+    <input type="color" id="textColor" onchange="changeTextColor()" />
+
+    <script>
+        
+        function changeFontType() {
+            const fontType = document.getElementById('fontType').value;
+            document.getElementById('myParagraph').style.fontFamily = fontType;
+        }
+
+        
+        function changeFontSize() {
+            const fontSize = document.getElementById('fontSize').value;
+            document.getElementById('myParagraph').style.fontSize = fontSize;
+        }
+
+       
+        function changeTextColor() {
+            const color = document.getElementById('textColor').value;
+            document.getElementById('myParagraph').style.color = color;
+        }
+    </script>
+</body>
+</html>

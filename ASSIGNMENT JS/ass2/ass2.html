@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo Box Operations</title>
+</head>
+<body>
+    <h2>Combo Box Operations</h2>
+
+    <label for="comboBox">Select Item:</label>
+    <select id="comboBox">
+        <option value="Item 1">Item 1</option>
+        <option value="Item 2">Item 2</option>
+        <option value="Item 3">Item 3</option>
+    </select>
+    
+    <br><br>
+
+    <label for="newItem">Add New Item:</label>
+    <input type="text" id="newItem">
+    <button onclick="addItem()">Add Item</button>
+
+    <br><br>
+
+    <button onclick="removeItem()">Remove Selected Item</button>
+
+    <br><br>
+
+    <button onclick="displaySelected()">Display Selected Item</button>
+    <p id="display"></p>
+
+    <script src="ass2.js"></script>
+</body>
+</html>

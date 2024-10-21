@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Difference Calculator</title>
+</head>
+<body>
+
+    <h1>Calculate Days Between Two Dates</h1>
+
+
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="startDate">
+
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" name="endDate">
+
+    <button onclick="calculateDays()">Calculate Days</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateDays() {
+            const startDate = new Date(document.getElementById('startDate').value);
+            const endDate = new Date(document.getElementById('endDate').value);
+            const timeDifference = endDate - startDate;
+            const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+            if (isNaN(daysDifference) || daysDifference < 0) {
+                document.getElementById('result').innerText = "Please select valid dates.";
+            } else {
+                document.getElementById('result').innerText = `Number of days between the two dates: ${daysDifference}`;
+            }
+        }
+    </script>
+
+</body>
+</html>

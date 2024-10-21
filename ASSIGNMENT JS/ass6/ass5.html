@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Table Manipulation</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simple Table Manipulation</h1>
+
+    
+    <table id="myTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Branch</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>22</td>
+            <td>CSE</td>
+        </tr>
+        <tr>
+            <td>Jane</td>
+            <td>21</td>
+            <td>ECE</td>
+        </tr>
+        <tr>
+            <td>Alex</td>
+            <td>23</td>
+            <td>ME</td>
+        </tr>
+    </table>
+
+    <br>
+
+    
+    <label for="borderWidth">Border Width:</label>
+    <select id="borderWidth" onchange="changeBorderWidth()">
+        <option value="1px">1px</option>
+        <option value="2px">2px</option>
+        <option value="3px">3px</option>
+        <option value="4px">4px</option>
+    </select>
+
+    
+    <label for="bgColor">Background Color:</label>
+    <input type="color" id="bgColor" onchange="changeTableColors()" />
+
+    <label for="fgColor">Text Color:</label>
+    <input type="color" id="fgColor" onchange="changeTableColors()" />
+
+    
+    <label for="textAlign">Text Alignment:</label>
+    <select id="textAlign" onchange="changeTextAlign()">
+        <option value="left">Left</option>
+        <option value="center" selected>Center</option>
+        <option value="right">Right</option>
+    </select>
+
+    <script>
+        
+        function changeBorderWidth() {
+            const width = document.getElementById('borderWidth').value;
+            const table = document.getElementById('myTable');
+            table.style.borderWidth = width;
+            const cells = table.querySelectorAll('th, td');
+            cells.forEach(cell => cell.style.borderWidth = width);
+        }
+
+        
+        function changeTableColors() {
+            const bgColor = document.getElementById('bgColor').value;
+            const fgColor = document.getElementById('fgColor').value;
+            const table = document.getElementById('myTable');
+            table.style.backgroundColor = bgColor;
+            table.style.color = fgColor;
+        }
+
+        
+        function changeTextAlign() {
+            const align = document.getElementById('textAlign').value;
+            const cells = document.querySelectorAll('#myTable th, #myTable td');
+            cells.forEach(cell => cell.style.textAlign = align);
+        }
+    </script>
+</body>
+</html>

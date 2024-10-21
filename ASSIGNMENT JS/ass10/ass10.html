@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date of Birth Validation</title>
+</head>
+<body>
+
+    <h1>Date of Birth Validator</h1>
+    <label for="dob">Select Date of Birth:</label>
+    <input type="date" id="dob" name="dob" value="2020-01-01" min="2000-01-01" max="2020-09-01">
+
+    <button onclick="validateDOB()">Validate</button>
+    <p id="validationResult"></p>
+
+    <script>
+        function validateDOB() {
+            const dobInput = document.getElementById('dob');
+            const dobValue = new Date(dobInput.value);
+            const minDate = new Date('2000-01-01');
+            const maxDate = new Date('2020-09-01');
+
+            if (dobValue >= minDate && dobValue <= maxDate) {
+                document.getElementById('validationResult').innerText = "Valid Date of Birth!";
+            } else {
+                document.getElementById('validationResult').innerText = "Invalid Date of Birth! Please select a date between 01.01.2000 and 01.09.2020.";
+            }
+        }
+    </script>
+
+</body>
+</html>
